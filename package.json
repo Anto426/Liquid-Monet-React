@@ -1,0 +1,54 @@
+{
+  "name": "@anto426/liquid-monet-react",
+  "version": "0.1.0",
+  "description": "Liquid Monet: accessible glass components and adaptive palettes for React and Next.js.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "src/styles.css",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./src/styles.css",
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build",
+    "dev": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0 <20",
+    "react-dom": ">=18.2.0 <20"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anto426/Liquid-Monet-React.git"
+  },
+  "homepage": "https://github.com/Anto426/Liquid-Monet-React#readme",
+  "bugs": {
+    "url": "https://github.com/Anto426/Liquid-Monet-React/issues"
+  },
+  "author": "Anto426"
+}

@@ -1,0 +1,8 @@
+Liquid Monet React
+Copyright 2026 Anto426
+
+The palette seed values and selected design tokens are adapted from Liquid Monet SDK,
+Copyright 2026 Anto426, licensed under Apache License 2.0.
+Reference source: Liquid Monet SDK by Anto426.
+This package contains an independently implemented React/CSS renderer.
+
