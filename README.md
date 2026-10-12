@@ -74,4 +74,3 @@ Installa il `.tgz` risultante nel progetto destinatario con `npm install percors
 Il pacchetto contiene JavaScript compilato, dichiarazioni TypeScript, CSS e licenza.
 React e React DOM sono peer dependencies; la libreria non dipende da Next.js.
 Non è stata pubblicata su npm.
-
