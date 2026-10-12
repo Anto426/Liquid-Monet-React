@@ -47,8 +47,22 @@ export function Example() {
 
 Esportazioni: `LiquidProvider`, `LiquidBackground`, `LiquidCard`, `LiquidNavigationBar`,
 `LiquidButton`, `LiquidLink`, `LiquidBadge`, `LiquidChip`, `LiquidInput`,
-`LiquidSearchBar`, `LiquidSelect`, `LiquidSwitch`, `LiquidDialog`, `useLiquidTheme`,
+`LiquidSearchBar`, `LiquidSelect`, `LiquidSwitch`, `LiquidDialog`, `LiquidAlert`, `useLiquidTheme`,
 `liquidPresets`, `liquidTokens`.
+
+`LiquidAlert` mostra notifiche inline con varianti `info`, `success`, `warning`
+ed `error`, icona, titolo facoltativo e pulsante di chiusura. Errori e avvisi
+usano `role="alert"`; informazioni e conferme usano `role="status"`.
+
+```tsx
+<LiquidAlert
+  variant="error"
+  title="Accesso non riuscito"
+  onDismiss={() => setError("")}
+>
+  Credenziali non valide.
+</LiquidAlert>
+```
 
 I componenti inoltrano attributi HTML e `className`. Puoi regolare il materiale con
 `--lm-surface`, `--lm-glass-blur`, `--lm-sheen`, `--lm-edge` sul provider o sulla

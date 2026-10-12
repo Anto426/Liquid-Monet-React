@@ -24,6 +24,64 @@ export {
 
 const cx = (...values: (string | false | undefined)[]) =>
   values.filter(Boolean).join(" ");
+export type LiquidAlertVariant = "info" | "success" | "warning" | "error";
+export function LiquidAlert({
+  variant = "info",
+  title,
+  children,
+  onDismiss,
+  className,
+  ...props
+}: Omit<HTMLAttributes<HTMLDivElement>, "title"> & {
+  variant?: LiquidAlertVariant;
+  title?: ReactNode;
+  onDismiss?: () => void;
+}) {
+  const paths = {
+    info: "M12 11v6M12 7h.01",
+    success: "m7 12 3 3 7-7",
+    warning: "M12 7v6M12 17h.01",
+    error: "m8 8 8 8M16 8l-8 8",
+  };
+  return (
+    <div
+      {...props}
+      role={variant === "error" || variant === "warning" ? "alert" : "status"}
+      aria-atomic="true"
+      className={cx("lm-glass", "lm-alert", `lm-alert--${variant}`, className)}
+    >
+      <span className="lm-alert-icon" aria-hidden="true">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d={paths[variant]} />
+        </svg>
+      </span>
+      <div className="lm-alert-content">
+        {title && <strong className="lm-alert-title">{title}</strong>}
+        <div>{children}</div>
+      </div>
+      {onDismiss && (
+        <button
+          type="button"
+          className="lm-alert-close"
+          aria-label="Chiudi avviso"
+          onClick={onDismiss}
+        >
+          ×
+        </button>
+      )}
+    </div>
+  );
+}
 type Theme = {
   preset: LiquidPreset;
   mode: LiquidMode;
